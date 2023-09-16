@@ -1,0 +1,102 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.container#blur.active {
+  filter: blur(2px);
+  background: rgba(5, 15, 56, 0.22);
+  pointer-events: none;
+  user-select: none;
+}
+
+#complete.close {
+  display: none;
+}
+
+select#currency option[value="USA"] {
+  background-image: url('./images/us.png');
+}
+
+#showIcn.hide {
+  display: none;
+}
+
+#hideIcn {
+  display: none;
+}
+
+#hideIcn.show {
+  display: block;
+}
+
+#balance.hide {
+  display: none;
+}
+
+#hideBalance {
+  display: none;
+}
+
+#hideBalance.show {
+  display: block;
+}
+
+#cryptoBtn.active {
+  font-weight: 700;
+}
+
+#portfolioBtn.active {
+  font-weight: 700;
+}
+
+#crypto.hide {
+  display: none;
+}
+
+#portfolio {
+  display: none;
+}
+
+#portfolio.show {
+  display: table;
+}
+
+tr {
+  border-bottom: 1px solid #E4E7EC !important;
+}
+
+.days ul> button:active {
+  font-weight: 700;
+  color: black;
+}
+
+.days ul> button:focus {
+  font-weight: 700;
+  color: black;
+}
+
+#modal {
+  position: fixed;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 5px 30px rgba(0, 0, 0, 30);
+  transition: 0.5s;
+}
+
+#modal.active {
+  top: 20rem;
+  visibility: visible;
+  opacity: 1;
+  transition: 0.5s;
+}
+
+@media (min-width: 768px) {
+  #modal.active {
+    top: 17rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  #modal.active {
+    top: 20rem;
+  }
+}
