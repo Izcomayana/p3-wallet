@@ -2,6 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
+header a:hover svg {
+  fill: white !important;
+}
+
+a:focus svg {
+  fill: white;
+}
+
+a:active svg {
+  fill: white;
+}
+
 .container#blur.active {
   filter: blur(2px);
   background: rgba(5, 15, 56, 0.22);
@@ -27,6 +39,11 @@ select#currency option[value="USA"] {
 
 #hideIcn.show {
   display: block;
+}
+
+#P2PDropdown.show {
+  display: block;
+  transition: 200ms ease-in-out;
 }
 
 #balance.hide {
@@ -60,6 +77,44 @@ select#currency option[value="USA"] {
 #portfolio.show {
   display: table;
 }
+
+#selectContent {
+  display: none;
+}
+
+#selectContent.show {
+  display: block;
+}
+
+/* .custom-select select {
+  display: none;
+}
+
+.select-content {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  border: 1px solid #ccc;
+  background-color: #fff;
+  width: 100%;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+
+
+.option {
+  display: flex;
+  align-items: center;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.option:hover {
+  background-color: #f0f0f0;
+} */
 
 tr {
   border-bottom: 1px solid #E4E7EC !important;

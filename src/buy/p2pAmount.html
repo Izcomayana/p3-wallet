@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/dist/output.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../input.css">
+    <script src="/src/script.js"></script>
+    <title>p3 Wallet</title>
+  </head>
+  <body>
+    <div>
+      <div
+        class="container transition-all relative min-h-screen md:max-w-[100vw] lg:max-w-[100vw]"
+      >
+        <header id="header"></header>
+        <main>
+          <div
+            class="w-full bg-white rounded-t-3xl p-4 pt-8 md:rounded-3xl"
+          >
+            <form class="my-4 mx-auto md:w-1/2"  onsubmit="return false">
+              <div class="w-fit mb-8">
+                <h2 class="text-2xl font-semibold">P2P buy</h2>
+              </div>
+              <div class="relative flex flex-col max-w-[22.5rem] my-4">
+                <label for="coin" class="text-sm font-medium text-[#344054] mb-2">Select coin</label>
+                <select
+                  name="coin"
+                  id="coinSelect"
+                  class="w-full rounded-xl border-gray-300 focus:ring-0 focus:border-gray-300"
+                >
+                  <option class="text-gray-300" value="bitcoin" selected>Bitcoin</option>
+                  <option class="text-gray-300" value="ethereum">Ethereum</option>
+                  <option class="text-gray-300" value="usdoin">USD Coin</option>
+                  <option class="text-gray-300" value="tether">Tether</option>
+                </select>
+
+                <!-- <button
+                  class="flex justify-between items-center text-base font-medium border border-primary rounded-3xl py-3 px-8 hover:bg-[#cad5ede6] md:py-2 md:px-8"
+                  id="selectBtn"
+                  onclick="toggleSelect()"
+                  >
+                  Bitcoin
+                  <svg
+                    class="w-[16px] h-[16px] text-gray-800"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 14 8"
+                  >
+                    <path
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="m1 1 5.326 5.7a.909.909 0 0 0 1.348 0L13 1"
+                    />
+                  </svg>
+                </button> -->
+                <p class="flex my-2">
+                  <span class="text-sm font-medium text-black mr-2">1 BTC = 2,289,687.48 NGN </span>
+                  
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path d="M7.49994 15.25C7.30994 15.25 7.11994 15.18 6.96994 15.03C6.67994 14.74 6.67994 14.26 6.96994 13.97L10.1699 10.77C10.3299 10.61 10.5399 10.53 10.7699 10.55C10.9899 10.57 11.1899 10.69 11.3199 10.88L12.4099 12.52L15.9599 8.97C16.2499 8.68 16.7299 8.68 17.0199 8.97C17.3099 9.26 17.3099 9.74 17.0199 10.03L12.8199 14.23C12.6599 14.39 12.4499 14.47 12.2199 14.45C11.9999 14.43 11.7999 14.31 11.6699 14.12L10.5799 12.48L8.02994 15.03C7.87994 15.18 7.68994 15.25 7.49994 15.25Z" fill="#12B76A"/>
+                    <path d="M16.5 12.25C16.09 12.25 15.75 11.91 15.75 11.5V10.25H14.5C14.09 10.25 13.75 9.91 13.75 9.5C13.75 9.09 14.09 8.75 14.5 8.75H16.5C16.91 8.75 17.25 9.09 17.25 9.5V11.5C17.25 11.91 16.91 12.25 16.5 12.25Z" fill="#12B76A"/>
+                    <path d="M15 22.75H9C3.57 22.75 1.25 20.43 1.25 15V9C1.25 3.57 3.57 1.25 9 1.25H15C20.43 1.25 22.75 3.57 22.75 9V15C22.75 20.43 20.43 22.75 15 22.75ZM9 2.75C4.39 2.75 2.75 4.39 2.75 9V15C2.75 19.61 4.39 21.25 9 21.25H15C19.61 21.25 21.25 19.61 21.25 15V9C21.25 4.39 19.61 2.75 15 2.75H9Z" fill="#12B76A"/>
+                  </svg>
+                </p>
+                
+                <div id="selectContent" class="border border-primary rounded-md shadow-lg p-3">
+                  <div class="option flex items-center" data-value="bitcoin">
+                    <img src="/src/images/btc-logo.png" class="mr-2" alt="btc" />
+                    <p>Bitcoin <span class="text-gray-500">BTC</span></p>
+                  </div>
+                  <div class="option flex items-center my-2" data-value="ethereum">
+                    <img src="/src/images/ethereum.png" class="mr-2" alt="eth" />
+                    <p>Ethereum <span class="text-gray-500">ETH</span></p>
+                  </div>
+                  <div class="option flex items-center" data-value="usdcoin">
+                    <img src="/src/images/usd-coin.png" class="mr-2" alt="usd" />
+                    <p>USD Coin <span class="text-gray-500">USDC</span></p>
+                  </div>
+                  <div class="option flex items-center mt-2" data-value="tether">
+                    <img src="/src/images/tether.png" class="mr-2" alt="tether" />
+                    <p>Tether <span class="text-gray-500">USDT</span></p>
+                  </div>
+                </div>
+              </div>
+              <div class="flex flex-col max-w-[22.5rem]">
+                <label for="buy-amunt" class="text-sm font-medium text-[#344054] mb-2">
+                  Enter buy amount
+                </label>
+                <div class="flex w-full">
+                  <select name="currency" id="" class="w-[37%] rounded-s-xl border-gray-300 border-r-0 focus:ring-0 focus:border-gray-300">
+                    <option class="text-gray-300" value="NGN" selected>NGN</option>
+                    <option class="text-gray-300" value="Dol">Dollars</option>
+                  </select>
+                  <input
+                    type="number"
+                    name="buy-amunt"
+                    id="buy-amunt"
+                    placeholder="1234567"
+                    class="w-[63%] rounded-e-xl border-gray-300 border-l-0 focus:ring-0 focus:border-gray-300"
+                  />
+                </div>
+                
+              </div>
+              <div class="flex justify-between max-w-[22.5rem] mb-4 mt-12">
+                <button
+                  class="text-sm font-medium border border-primary rounded-3xl py-1.5 px-14 hover:bg-[#cad5ede6]"
+                  onclick="toggle()"
+                >
+                  Cancel
+                </button>
+                <button
+                  class="text-sm font-medium border bg-primary text-white rounded-3xl py-1.5 px-14 hover:bg-[#101828e8]"
+                >
+                  Continue
+                </button>
+              </div>
+            </form>
+          </div>
+        </main>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,3 +1,10 @@
+fetch('/src/header.html')
+.then(response => response.text())
+.then(headerHtml => {
+    document.getElementById('header').innerHTML = headerHtml;
+})
+.catch(error => console.error('Error loading header:', error));
+
 function toggle() {
   var blur = document.querySelector("#blur");
   blur.classList.toggle("active");
@@ -23,6 +30,12 @@ function toggleBal() {
 
   const hideIcn = document.querySelector("#hideIcn");
   hideIcn.classList.toggle("show");
+}
+
+
+function toggleP2P () {
+  const P2PDropdown = document.querySelector('#P2PDropdown');
+  P2PDropdown.classList.toggle('show');
 }
 
 function showCrypto() {
@@ -280,3 +293,37 @@ function getAssetDetailsById(assetId) {
 document.addEventListener("DOMContentLoaded", function () {
   populateTable();
 });
+
+function toggleSelect () {
+  const selectContent = document.getElementById("selectContent");
+  selectContent.classList.toggle("show");
+  console.log('select btn clicked')
+}
+
+// // Handle option selection
+// selectContent.addEventListener("click", function (e) {
+//   if (e.target.classList.contains("option")) {
+//     const optionValue = e.target.getAttribute("data-value");
+//     select.value = optionValue;
+//     selectContent.classList.remove("show");
+//   }
+// });
+
+// Close the dropdown if the user clicks outside of it
+document.addEventListener("click", function (e) {
+  if (!e.target.matches(".custom-select")) {
+    selectContent.classList.remove("show");
+  }
+});
+
+// selectContent.addEventListener("click", function () {
+//   select.click(); // Trigger the select element when clicking the custom dropdown
+// });
+
+// // Handle option selection
+// select.addEventListener("change", function () {
+//   const selectedOption = select.options[select.selectedIndex];
+//   const optionValue = selectedOption.value;
+//   const optionText = selectedOption.text;
+//   console.log(`Selected Option: ${optionValue} - ${optionText}`);
+// });

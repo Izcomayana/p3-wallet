@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="/dist/output.css" rel="stylesheet" />
+    <link href="dist/output.css" rel="stylesheet" />
     <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.css"  rel="stylesheet" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.js"></script>
     <script src="../path/to/flowbite/dist/flowbite.min.js"></script> -->
@@ -16,67 +16,7 @@
         class="container transition-all relative min-h-screen lg:max-w-[100vw]"
         id="blur"
       >
-        <header>
-          <div class="border-b-2 p-4">
-            <nav class="flex justify-between">
-              <did class="hidden w-1/6 lg:block">
-                <img src="src/images/p3-wallet.png" alt="p3-wallet" />
-              </did>
-              <div class="flex justify-between w-full md:w-4/5">
-                <div
-                  class="flex justify-between w-full pt-4 md:justify-normal md:pt-0"
-                >
-                  <a
-                    href="#"
-                    class="p-2 rounded-3xl text-[#667085] flex items-center h-fit hover:bg-primary hover:text-white focus:bg-primary focus:text-white active:bg-primary active:text-white transition-all md:text-base"
-                  >
-                    <span class="pr-1">
-                      <img src="src/images//home.png" alt="Home" class="" />
-                    </span>
-                    <span class="text-xs md:text-base">Home</span>
-                  </a>
-                  <a
-                    href="#"
-                    class="p-2 rounded-3xl text-[#667085] flex items-center h-fit hover:bg-primary hover:text-white focus:bg-primary focus:text-white active:bg-primary active:text-white transition-all"
-                  >
-                    <span class="pr-1">
-                      <img src="src/images//home.png" alt="Home" class="" />
-                    </span>
-                    <span class="text-xs md:text-base">Transaction</span>
-                  </a>
-                  <a
-                    href="#"
-                    class="p-2 rounded-3xl text-[#667085] flex items-center h-fit hover:bg-primary hover:text-white focus:bg-primary focus:text-white active:bg-primary active:text-white transition-all"
-                  >
-                    <span class="pr-1">
-                      <img src="src/images//home.png" alt="Home" class="" />
-                    </span>
-                    <span class="text-xs md:text-base">Bills</span>
-                  </a>
-                  <a
-                    href="#"
-                    class="p-2 rounded-3xl text-[#667085] flex items-center h-fit hover:bg-primary hover:text-white focus:bg-primary focus:text-white active:bg-primary active:text-white transition-all"
-                  >
-                    <span class="pr-1">
-                      <img src="src/images//home.png" alt="Home" class="" />
-                    </span>
-                    <span class="text-xs md:text-base">Settings</span>
-                  </a>
-                </div>
-                <div class="hidden lg:flex lg:w-[10%]">
-                  <span class="mr-2"
-                    ><img src="src/images/notification.png" alt="notification"
-                  /></span>
-                  <span class="h-7"
-                    ><img src="src/images/avatar.png" alt="avatar" class="h-full"
-                  /></span>
-                </div>
-              </div>
-            </nav>
-          </div>
-        </header>
-
-
+        <header id="header"></header>
 
         <main>
           <div class="p-6 lg:w-3/5 m-auto">
@@ -107,17 +47,19 @@
               </div>
             </div>
             <div>
-              <button
-                class="bg-primary text-white rounded-3xl py-3 px-4 text-base cursor-pointer transition-all hover:bg-[#101828e1]"
-              >
-                Skip for now
-              </button>
+              <a href="src/details.html">
+                <button
+                  class="bg-primary text-white rounded-3xl py-3 px-4 text-base cursor-pointer transition-all hover:bg-[#101828e1]"
+                >
+                  Skip for now
+                </button>
+              </a>
             </div>
           </div>
         </main>
       </div>
 
-      
+
       <div
         id="modal"
         class="w-full bg-white invisible opacity-0 top-[90%] left-1/2 rounded-t-3xl p-4 pt-8 md:w-2/3 md:rounded-3xl lg:w-1/2"

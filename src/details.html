@@ -1,13 +1,12 @@
-
 <!DOCTYPE html>
 <html>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="/dist/output.css" rel="stylesheet" />
     <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.css"  rel="stylesheet" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.js"></script>
     <script src="../path/to/flowbite/dist/flowbite.min.js"></script> -->
+    <link href="/dist/output.css" rel="stylesheet" />
     <script src="script.js"></script>
     <title>p3 Wallet</title>
   </head>
@@ -17,67 +16,8 @@
         class="container transition-all relative min-h-screen md:max-w-[100vw] lg:max-w-[100vw]"
         id="blur"
       >
-        <header>
-          <div class="border-b-2 p-4">
-            <nav class="flex justify-between">
-              <did class="hidden w-1/6 lg:block">
-                <img src="images/p3-wallet.png" alt="p3-wallet" />
-              </did>
-              <div class="flex justify-between w-full md:w-4/5">
-                <div
-                  class="flex justify-between w-full pt-4 md:justify-normal md:pt-0"
-                >
-                  <a
-                    href="#"
-                    class="p-2 rounded-3xl text-[#667085] flex items-center h-fit hover:bg-primary hover:text-white focus:bg-primary focus:text-white active:bg-primary active:text-white transition-all md:text-base"
-                  >
-                    <span class="pr-1">
-                      <img src="./images//home.png" alt="Home" class="" />
-                    </span>
-                    <span class="text-xs md:text-base">Home</span>
-                  </a>
-                  <a
-                    href="#"
-                    class="p-2 rounded-3xl text-[#667085] flex items-center h-fit hover:bg-primary hover:text-white focus:bg-primary focus:text-white active:bg-primary active:text-white transition-all"
-                  >
-                    <span class="pr-1">
-                      <img src="./images//home.png" alt="Home" class="" />
-                    </span>
-                    <span class="text-xs md:text-base">Transaction</span>
-                  </a>
-                  <a
-                    href="#"
-                    class="p-2 rounded-3xl text-[#667085] flex items-center h-fit hover:bg-primary hover:text-white focus:bg-primary focus:text-white active:bg-primary active:text-white transition-all"
-                  >
-                    <span class="pr-1">
-                      <img src="./images//home.png" alt="Home" class="" />
-                    </span>
-                    <span class="text-xs md:text-base">Bills</span>
-                  </a>
-                  <a
-                    href="#"
-                    class="p-2 rounded-3xl text-[#667085] flex items-center h-fit hover:bg-primary hover:text-white focus:bg-primary focus:text-white active:bg-primary active:text-white transition-all"
-                  >
-                    <span class="pr-1">
-                      <img src="./images//home.png" alt="Home" class="" />
-                    </span>
-                    <span class="text-xs md:text-base">Settings</span>
-                  </a>
-                </div>
-                <div class="hidden lg:flex lg:w-[10%]">
-                  <span class="mr-2"
-                    ><img src="images//notification.png" alt="notification"
-                  /></span>
-                  <span class="h-7"
-                    ><img src="images//avatar.png" alt="avatar" class="h-full"
-                  /></span>
-                </div>
-              </div>
-            </nav>
-          </div>
-        </header>
+        <header id="header"></header>
 
-        
         <main>
           <div class="my-4 lg:w-2/3 m-auto">
             <div
@@ -235,41 +175,93 @@
 
               <div>
                 <div class="flex justify-between mb-4 mt-8">
-                  <button
-                    class="flex items-center text-base font-medium border bg-primary text-white rounded-3xl py-3 px-8 hover:bg-[#101828e8] md:py-2 md:px-6 md:mr-6"
-                  >
-                    <svg
-                      class="w-6 h-6 mr-2 text-gray-50 dark:text-white"
-                      aria-hidden="true"
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="currentColor"
-                      viewBox="0 0 20 18"
+                  <div>
+                    <button
+                      class="flex items-center text-base font-medium border bg-primary text-white rounded-3xl py-3 px-8 hover:bg-[#101828e8] md:py-2 md:px-6 md:mr-6"
+                      onclick="toggleP2P()"
                     >
-                      <path
-                        d="M14 2a3.963 3.963 0 0 0-1.4.267 6.439 6.439 0 0 1-1.331 6.638A4 4 0 1 0 14 2Zm1 9h-1.264A6.957 6.957 0 0 1 15 15v2a2.97 2.97 0 0 1-.184 1H19a1 1 0 0 0 1-1v-1a5.006 5.006 0 0 0-5-5ZM6.5 9a4.5 4.5 0 1 0 0-9 4.5 4.5 0 0 0 0 9ZM8 10H5a5.006 5.006 0 0 0-5 5v2a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1v-2a5.006 5.006 0 0 0-5-5Z"
-                      />
-                    </svg>
-                    P2 trade
-                  </button>
-                  <button
-                    class="flex items-center text-base font-medium border border-primary rounded-3xl py-3 px-8 hover:bg-[#cad5ede6] md:py-2 md:px-8"
-                  >
-                    <svg
-                      class="w-6 h-6 mr-2 text-gray-800 dark:text-white"
-                      aria-hidden="true"
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="currentColor"
-                      viewBox="0 0 20 20"
+                      <svg
+                        class="w-6 h-6 mr-2 text-gray-50 dark:text-white"
+                        aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="currentColor"
+                        viewBox="0 0 20 18"
+                      >
+                        <path
+                          d="M14 2a3.963 3.963 0 0 0-1.4.267 6.439 6.439 0 0 1-1.331 6.638A4 4 0 1 0 14 2Zm1 9h-1.264A6.957 6.957 0 0 1 15 15v2a2.97 2.97 0 0 1-.184 1H19a1 1 0 0 0 1-1v-1a5.006 5.006 0 0 0-5-5ZM6.5 9a4.5 4.5 0 1 0 0-9 4.5 4.5 0 0 0 0 9ZM8 10H5a5.006 5.006 0 0 0-5 5v2a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1v-2a5.006 5.006 0 0 0-5-5Z"
+                        />
+                      </svg>
+                      P2 trade
+                    </button>
+
+                    <div id="P2PDropdown" class="hidden mt-2 rounded-md shadow-lg">
+                      <div class="flex flex-col">
+                        <a
+                          href="buy/p2pAmount.html"
+                          class="flex items-center text-primary py-4 px-3 rounded-md hover:bg-[#050f388d] transition-all"
+                        >
+                          <svg
+                            class="w-[1.3rem] h-[1.3rem] bg-primary text-white rounded-full mr-1 p-[0.3rem]"
+                            aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg"
+                            fill="none"
+                            viewBox="0 0 18 18"
+                          >
+                            <path
+                              stroke="currentColor"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              stroke-width="2"
+                              d="M9 1v16M1 9h16"
+                            />
+                          </svg>
+                          P2P buy
+                        </a>
+    
+                        <a
+                          href="#"
+                          class="flex items-center text-primary py-4 px-3 rounded-md hover:bg-[#050f388d] transition-all"
+                        >
+                          <svg
+                            class="mr-1"
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                          >
+                            <path
+                              d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM17.25 12.33C17.25 12.74 16.91 13.08 16.5 13.08C16.09 13.08 15.75 12.74 15.75 12.33V9.31L8.03 17.03C7.88 17.18 7.69 17.25 7.5 17.25C7.31 17.25 7.12 17.18 6.97 17.03C6.68 16.74 6.68 16.26 6.97 15.97L14.69 8.25H11.67C11.26 8.25 10.92 7.91 10.92 7.5C10.92 7.09 11.26 6.75 11.67 6.75H16.5C16.91 6.75 17.25 7.09 17.25 7.5V12.33Z"
+                              fill="#101828"
+                            />
+                          </svg>
+                          P2P sell
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div>
+                    <button
+                      class="flex items-center text-base font-medium border border-primary rounded-3xl py-3 px-8 hover:bg-[#cad5ede6] md:py-2 md:px-8"
                     >
-                      <path
-                        d="M11.074 4 8.442.408A.95.95 0 0 0 7.014.254L2.926 4h8.148ZM9 13v-1a4 4 0 0 1 4-4h6V6a1 1 0 0 0-1-1H1a1 1 0 0 0-1 1v13a1 1 0 0 0 1 1h17a1 1 0 0 0 1-1v-2h-6a4 4 0 0 1-4-4Z"
-                      />
-                      <path
-                        d="M19 10h-6a2 2 0 0 0-2 2v1a2 2 0 0 0 2 2h6a1 1 0 0 0 1-1v-3a1 1 0 0 0-1-1Zm-4.5 3.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2ZM12.62 4h2.78L12.539.41a1.086 1.086 0 1 0-1.7 1.352L12.62 4Z"
-                      />
-                    </svg>
-                    Wallet
-                  </button>
+                      <svg
+                        class="w-6 h-6 mr-2 text-gray-800 dark:text-white"
+                        aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                      >
+                        <path
+                          d="M11.074 4 8.442.408A.95.95 0 0 0 7.014.254L2.926 4h8.148ZM9 13v-1a4 4 0 0 1 4-4h6V6a1 1 0 0 0-1-1H1a1 1 0 0 0-1 1v13a1 1 0 0 0 1 1h17a1 1 0 0 0 1-1v-2h-6a4 4 0 0 1-4-4Z"
+                        />
+                        <path
+                          d="M19 10h-6a2 2 0 0 0-2 2v1a2 2 0 0 0 2 2h6a1 1 0 0 0 1-1v-3a1 1 0 0 0-1-1Zm-4.5 3.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2ZM12.62 4h2.78L12.539.41a1.086 1.086 0 1 0-1.7 1.352L12.62 4Z"
+                        />
+                      </svg>
+                      Wallet
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
@@ -310,7 +302,9 @@
 
             <div class="relative overflow-x-auto my-10">
               <table class="w-full text-left" id="crypto">
-                <thead class="hidden md:table-header-group text-gray-500 text-xs border-b">
+                <thead
+                  class="hidden md:table-header-group text-gray-500 text-xs border-b"
+                >
                   <tr>
                     <th scope="col" class="pl-6 py-3">Assets</th>
                     <th scope="col" class="text-right pr-6 py-3">Price</th>
@@ -319,9 +313,10 @@
                 <tbody class="text-sm" id="cryptoTable"></tbody>
               </table>
 
-
               <table class="w-full text-left" id="portfolio">
-                <thead class="hidden md:table-header-group text-gray-500 text-xs border-b">
+                <thead
+                  class="hidden md:table-header-group text-gray-500 text-xs border-b"
+                >
                   <tr>
                     <th scope="col" class="p-4">Portfolio</th>
                     <th scope="col" class="p-4">Price</th>
