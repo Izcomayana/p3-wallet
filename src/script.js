@@ -109,6 +109,14 @@ var assets = [
   },
 ];
 
+function click () {
+  console.log('clicked')
+}
+
+function cloak() {
+  console.log('clicked')
+}
+
 function populateTable() {
   var cryptoTable = document.getElementById("cryptoTable");
   var portfolioTable = document.getElementById("portfolioTable");
@@ -294,36 +302,3 @@ document.addEventListener("DOMContentLoaded", function () {
   populateTable();
 });
 
-function toggleSelect () {
-  const selectContent = document.getElementById("selectContent");
-  selectContent.classList.toggle("show");
-  console.log('select btn clicked')
-}
-
-// // Handle option selection
-// selectContent.addEventListener("click", function (e) {
-//   if (e.target.classList.contains("option")) {
-//     const optionValue = e.target.getAttribute("data-value");
-//     select.value = optionValue;
-//     selectContent.classList.remove("show");
-//   }
-// });
-
-// Close the dropdown if the user clicks outside of it
-document.addEventListener("click", function (e) {
-  if (!e.target.matches(".custom-select")) {
-    selectContent.classList.remove("show");
-  }
-});
-
-// selectContent.addEventListener("click", function () {
-//   select.click(); // Trigger the select element when clicking the custom dropdown
-// });
-
-// // Handle option selection
-// select.addEventListener("change", function () {
-//   const selectedOption = select.options[select.selectedIndex];
-//   const optionValue = selectedOption.value;
-//   const optionText = selectedOption.text;
-//   console.log(`Selected Option: ${optionValue} - ${optionText}`);
-// });
