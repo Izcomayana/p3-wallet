@@ -11,9 +11,9 @@
     <header id="header"></header>
 
     <main>
-      <div class="p-6 lg:w-3/5 m-auto">
-        <div>
-          <a href="./p2pAmount.html" class="flex items-center my-4">
+      <div class="px-6 lg:w-3/5 m-auto">
+        <div class="w-fit">
+          <a href="./p2pAmount.html" class="flex items-center mt-4 md:mb-4">
             <svg
               class="w-4 h-4 mr-2 text-gray-500"
               aria-hidden="true"
@@ -33,11 +33,11 @@
           </a>
         </div>
 
-        <div class="mt-10 pb-4 border-b">
+        <div class="mt-8 pb-4 border-b md:mt-10">
           <h2 class="text-2xl font-semibold">P2P buy</h2>
         </div>
 
-        <div class="w-[72.5%] my-8 md:flex justify-between">
+        <div class="mt-4 md:flex justify-between md:w-[72.5%] md:my-8">
           <div class="mb-4">
             <label for="coin" class="text-sm font-medium text-[#344054]">
               Coin
@@ -45,18 +45,18 @@
             <select
               name="coin"
               id="coin"
-              class="w-full rounded-md border-gray-300 mt-1 focus:ring-0 focus:border-gray-300"
+              class="w-full rounded-md cursor-pointer border-gray-300 mt-1 focus:ring-0 focus:border-gray-300"
             >
-              <option class="text-gray-300" value="bitcoin" selected>
+              <option class="rounded-md" value="bitcoin" selected>
                 Bitcoin
               </option>
-              <option class="text-gray-300" value="ethereum">Ethereum</option>
-              <option class="text-gray-300" value="usdoin">USD Coin</option>
-              <option class="text-gray-300" value="tether">Tether</option>
+              <option class="rounded-md" value="ethereum">Ethereum</option>
+              <option class="rounded-md" value="usdoin">USD Coin</option>
+              <option class="rounded-md" value="tether">Tether</option>
             </select>
           </div>
 
-          <div class="flex flex-col max-w-[20rem]">
+          <div class="flex flex-col md:max-w-[20rem]">
             <label for="buy-amount" class="text-sm font-medium text-[#344054]">
               Buy amount
             </label>
@@ -72,10 +72,9 @@
                 type="number"
                 name="buy-amunt"
                 id="buy-amunt"
-                placeholder="20,0000"
+                placeholder="20,0000 == BTC"
                 class="w-[63%] border-gray-300 border-l-0 focus:ring-0 focus:border-gray-300"
               />
-              <hr />
               <input
                 type="number"
                 name="buy-amunt"
@@ -87,20 +86,19 @@
           </div>
         </div>
 
-        <table class="hidden md:table w-full text-left mb-20" id="sellers">
+        <table class="w-full text-left mt-10 mb-20" id="sellers">
           <thead
-            class="hidden md:table-header-group text-gray-500 text-xs border-b"
+            class="text-gray-500 text-xs border-b"
           >
             <tr>
-              <th scope="col" class="p-4">Buy from</th>
-              <th scope="col" class="p-4">
+              <th scope="col" class="py-4">Buy from</th>
+              <th scope="col" class="hidden md:table-cell p-4">
                 Rate <span class="text-gray-300">Refresh 5m 22s</span>
               </th>
-              <th scope="col" class="p-4">Limits</th>
+              <th scope="col" class="py-4">Limits</th>
             </tr>
           </thead>
-          <tbody class="text-sm divide-y" id="sellersTable">
-          </tbody>
+          <tbody class="text-sm divide-y" id="sellersTable"></tbody>
         </table>
       </div>
     </main>

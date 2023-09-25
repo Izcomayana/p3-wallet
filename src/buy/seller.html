@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/dist/output.css" rel="stylesheet" />
+    <script src="p2p.js"></script>
+    <title>p3 Wallet</title>
+  </head>
+  <body>
+    <div>
+      <div
+        id="sellerBlur"
+        class="container transition-all relative min-h-screen lg:max-w-[100vw]"
+      >
+        <header id="header"></header>
+
+        <main>
+          <div class="px-6 lg:w-5/6 ml-auto mb-40">
+            <div class="w-fit">
+              <a href="./p2pAmount.html" class="flex items-center mt-4 md:mb-4">
+                <svg
+                  class="w-4 h-4 mr-2 text-gray-500"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 14 10"
+                >
+                  <path
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="1.4"
+                    d="M13 5H1m0 0 4 4M1 5l4-4"
+                  />
+                </svg>
+                <p class="text-gray-500 text-base font-medium">Back</p>
+              </a>
+            </div>
+
+            <div class="mt-8 pb-4 border-b md:mt-10">
+              <h1 class="font-bold md:text-2xl lg:text-3xl">
+                Buy BTC from <span class="name"></span>
+              </h1>
+            </div>
+
+            <div
+              class="flex items-center mt-3 text-sm font-medium md:text-base md:font-bold"
+            >
+              Orders expires in
+              <p class="ml-2 bg-[#FFDEB2] rounded-3xl py-1.5 px-5">
+                <span id="minutes" class="text-[#472B05]"></span> min :
+                <span id="seconds" class="text-[#472B05]"></span> sec
+              </p>
+            </div>
+
+            <div class="my-6 md:flex md:flex-row-reverse md:justify-end">
+              <div
+                class="sellers-info md:max-w-[22.5rem] md:ml-16 lg:max-w-[30rem]"
+              >
+                <h2 class="font-bold mb-3">Sellers Info</h2>
+                <div class="bg-gray-100 rounded-2xl shadow-md py-6 px-4">
+                  <div class="flex items-center">
+                    <span id="img" class="mr-2"></span>
+                    <h3 class="name font-bold"></h3>
+                  </div>
+                  <div
+                    class="flex items-center my-4 text-gray-500 text-sm font-medium"
+                  >
+                    <p>Trade(s) <span id="trades"></span></p>
+                    <p class="flex items-center">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="14"
+                        height="14"
+                        viewBox="0 0 14 14"
+                        fill="none"
+                        class="mx-1"
+                      >
+                        <path
+                          d="M2.8835 13.1111L3.96683 8.42778L0.333496 5.27778L5.1335 4.86111L7.00016 0.444443L8.86683 4.86111L13.6668 5.27778L10.0335 8.42778L11.1168 13.1111L7.00016 10.6278L2.8835 13.1111Z"
+                          fill="#FDB022"
+                        />
+                      </svg>
+                      <span id="rating"></span>
+                    </p>
+                  </div>
+                  <div class="flex items-center justify-between md:hidden">
+                    <div class="flex items-center">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        fill="none"
+                        class="mr-2"
+                      >
+                        <path
+                          d="M7.99967 1.33325C4.32634 1.33325 1.33301 4.32659 1.33301 7.99992C1.33301 11.6733 4.32634 14.6666 7.99967 14.6666C11.673 14.6666 14.6663 11.6733 14.6663 7.99992C14.6663 4.32659 11.673 1.33325 7.99967 1.33325ZM11.1863 6.46659L7.40634 10.2466C7.31301 10.3399 7.18634 10.3933 7.05301 10.3933C6.91967 10.3933 6.79301 10.3399 6.69967 10.2466L4.81301 8.35992C4.61967 8.16659 4.61967 7.84659 4.81301 7.65325C5.00634 7.45992 5.32634 7.45992 5.51967 7.65325L7.05301 9.18659L10.4797 5.75992C10.673 5.56659 10.993 5.56659 11.1863 5.75992C11.3797 5.95325 11.3797 6.26659 11.1863 6.46659Z"
+                          fill="#12B76A"
+                        />
+                      </svg>
+                      <p class="text-gray-500 text-sm">
+                        Verification status 3/3
+                      </p>
+                    </div>
+                    <div>
+                      <svg
+                        class="w-3 h-3 text-gray-500 dark:text-white"
+                        aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 8 14"
+                      >
+                        <path
+                          stroke="currentColor"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                          stroke-width="1.5"
+                          d="m1 13 5.7-5.326a.909.909 0 0 0 0-1.348L1 1"
+                        />
+                      </svg>
+                    </div>
+                  </div>
+                  <div class="hidden items-center justify-between md:flex">
+                    <div class="flex items-center">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        fill="none"
+                        class="mr-2"
+                      >
+                        <path
+                          d="M7.99967 1.33325C4.32634 1.33325 1.33301 4.32659 1.33301 7.99992C1.33301 11.6733 4.32634 14.6666 7.99967 14.6666C11.673 14.6666 14.6663 11.6733 14.6663 7.99992C14.6663 4.32659 11.673 1.33325 7.99967 1.33325ZM11.1863 6.46659L7.40634 10.2466C7.31301 10.3399 7.18634 10.3933 7.05301 10.3933C6.91967 10.3933 6.79301 10.3399 6.69967 10.2466L4.81301 8.35992C4.61967 8.16659 4.61967 7.84659 4.81301 7.65325C5.00634 7.45992 5.32634 7.45992 5.51967 7.65325L7.05301 9.18659L10.4797 5.75992C10.673 5.56659 10.993 5.56659 11.1863 5.75992C11.3797 5.95325 11.3797 6.26659 11.1863 6.46659Z"
+                          fill="#12B76A"
+                        />
+                      </svg>
+                      <p class="text-gray-500 text-sm">
+                        ID Verified
+                      </p>
+                    </div>
+                    <div class="flex items-center">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        fill="none"
+                        class="mr-2"
+                      >
+                        <path
+                          d="M7.99967 1.33325C4.32634 1.33325 1.33301 4.32659 1.33301 7.99992C1.33301 11.6733 4.32634 14.6666 7.99967 14.6666C11.673 14.6666 14.6663 11.6733 14.6663 7.99992C14.6663 4.32659 11.673 1.33325 7.99967 1.33325ZM11.1863 6.46659L7.40634 10.2466C7.31301 10.3399 7.18634 10.3933 7.05301 10.3933C6.91967 10.3933 6.79301 10.3399 6.69967 10.2466L4.81301 8.35992C4.61967 8.16659 4.61967 7.84659 4.81301 7.65325C5.00634 7.45992 5.32634 7.45992 5.51967 7.65325L7.05301 9.18659L10.4797 5.75992C10.673 5.56659 10.993 5.56659 11.1863 5.75992C11.3797 5.95325 11.3797 6.26659 11.1863 6.46659Z"
+                          fill="#12B76A"
+                        />
+                      </svg>
+                      <p class="text-gray-500 text-sm">
+                        Email Verified
+                      </p>
+                    </div>
+                    <div class="flex items-center">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="16"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        fill="none"
+                        class="mr-2"
+                      >
+                        <path
+                          d="M7.99967 1.33325C4.32634 1.33325 1.33301 4.32659 1.33301 7.99992C1.33301 11.6733 4.32634 14.6666 7.99967 14.6666C11.673 14.6666 14.6663 11.6733 14.6663 7.99992C14.6663 4.32659 11.673 1.33325 7.99967 1.33325ZM11.1863 6.46659L7.40634 10.2466C7.31301 10.3399 7.18634 10.3933 7.05301 10.3933C6.91967 10.3933 6.79301 10.3399 6.69967 10.2466L4.81301 8.35992C4.61967 8.16659 4.61967 7.84659 4.81301 7.65325C5.00634 7.45992 5.32634 7.45992 5.51967 7.65325L7.05301 9.18659L10.4797 5.75992C10.673 5.56659 10.993 5.56659 11.1863 5.75992C11.3797 5.95325 11.3797 6.26659 11.1863 6.46659Z"
+                          fill="#12B76A"
+                        />
+                      </svg>
+                      <p class="text-gray-500 text-sm">
+                        Address Verified
+                      </p>
+                    </div>
+                  </div>
+                  <div class="flex justify-between border-b py-7">
+                    <button
+                      class="relative text-sm font-medium border bg-primary text-white rounded-3xl py-2 px-5 cursor-pointer hover:bg-[#101828e8]"
+                    >
+                      Chat with buyer
+                      <div
+                        class="absolute inline-flex items-center justify-center w-3 h-3 bg-red-500 border border-white rounded-full -top-1 right-2"
+                      ></div>
+                    </button>
+                    <button
+                      class="text-sm font-medium border text-black border-black rounded-3xl py-2 px-5 cursor-pointer hover:bg-[#101828e8]"
+                    >
+                      Raise dispute
+                    </button>
+                  </div>
+                  <div class="mt-8">
+                    <h3 class="font-bold mb-6">
+                      Transfer funds to the sellers account provided below
+                    </h3>
+                    <div>
+                      <h4 class="font-bold text-gray-500">Name</h4>
+                      <span class="flex items-center justify-between">
+                        <p class="name"></p>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                        >
+                          <path
+                            d="M16 12.9V17.1C16 20.6 14.6 22 11.1 22H6.9C3.4 22 2 20.6 2 17.1V12.9C2 9.4 3.4 8 6.9 8H11.1C14.6 8 16 9.4 16 12.9Z"
+                            fill="#848484"
+                          />
+                          <path
+                            d="M17.0998 2H12.8998C9.81668 2 8.37074 3.09409 8.06951 5.73901C8.00649 6.29235 8.46476 6.75 9.02167 6.75H11.0998C15.2998 6.75 17.2498 8.7 17.2498 12.9V14.9781C17.2498 15.535 17.7074 15.9933 18.2608 15.9303C20.9057 15.629 21.9998 14.1831 21.9998 11.1V6.9C21.9998 3.4 20.5998 2 17.0998 2Z"
+                            fill="#848484"
+                          />
+                        </svg>
+                      </span>
+                    </div>
+                    <div class="my-6">
+                      <h4 class="font-bold text-gray-500">Bank number</h4>
+                      <span class="flex items-center justify-between">
+                        <p class="mb-2">400002562</p>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                        >
+                          <path
+                            d="M16 12.9V17.1C16 20.6 14.6 22 11.1 22H6.9C3.4 22 2 20.6 2 17.1V12.9C2 9.4 3.4 8 6.9 8H11.1C14.6 8 16 9.4 16 12.9Z"
+                            fill="#848484"
+                          />
+                          <path
+                            d="M17.0998 2H12.8998C9.81668 2 8.37074 3.09409 8.06951 5.73901C8.00649 6.29235 8.46476 6.75 9.02167 6.75H11.0998C15.2998 6.75 17.2498 8.7 17.2498 12.9V14.9781C17.2498 15.535 17.7074 15.9933 18.2608 15.9303C20.9057 15.629 21.9998 14.1831 21.9998 11.1V6.9C21.9998 3.4 20.5998 2 17.0998 2Z"
+                            fill="#848484"
+                          />
+                        </svg>
+                      </span>
+                    </div>
+                    <div>
+                      <h4 class="font-bold text-gray-500">Bank name</h4>
+                      <span class="flex items-center justify-between">
+                        <p class="mb-2">Kuda Bank NG</p>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                        >
+                          <path
+                            d="M16 12.9V17.1C16 20.6 14.6 22 11.1 22H6.9C3.4 22 2 20.6 2 17.1V12.9C2 9.4 3.4 8 6.9 8H11.1C14.6 8 16 9.4 16 12.9Z"
+                            fill="#848484"
+                          />
+                          <path
+                            d="M17.0998 2H12.8998C9.81668 2 8.37074 3.09409 8.06951 5.73901C8.00649 6.29235 8.46476 6.75 9.02167 6.75H11.0998C15.2998 6.75 17.2498 8.7 17.2498 12.9V14.9781C17.2498 15.535 17.7074 15.9933 18.2608 15.9303C20.9057 15.629 21.9998 14.1831 21.9998 11.1V6.9C21.9998 3.4 20.5998 2 17.0998 2Z"
+                            fill="#848484"
+                          />
+                        </svg>
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                class="summary my-10 md:max-w-[17rem] md:my-0 lg:max-w-[19rem]"
+              >
+                <h5 class="font-bold mb-3">Sumary</h5>
+                <div>
+                  <label
+                    for="buy-amount"
+                    class="text-sm font-medium text-[#344054]"
+                  >
+                    I want to sell
+                  </label>
+                  <div class="flex w-full mt-2">
+                    <input
+                      type="number"
+                      name="buy-amunt"
+                      id="buy-amount"
+                      placeholder="BTC"
+                      class="w-[25%] rounded-s-md border-gray-300 border-r-2 focus:ring-0 focus:border-gray-300"
+                    />
+                    <input
+                      type="number"
+                      name="buy-amunt"
+                      id="buy-amunt"
+                      placeholder="0.00145434"
+                      class="w-[75%] text-black rounded-e-md border-gray-300 border-l-0 focus:ring-0 focus:border-gray-300"
+                    />
+                  </div>
+                  <div class="border-l-2 my-2 ml-[0.8rem] py-4">
+                    <div class="ml-[-1rem]">
+                      <div class="flex items-center pb-4">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          class="bg-primary rounded-full mr-2 p-[0.2rem]"
+                          width="28"
+                          height="28"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                        >
+                          <path
+                            d="M17 3.5H7C4 3.5 2 5 2 8.5V15.5C2 19 4 20.5 7 20.5H17C20 20.5 22 19 22 15.5V8.5C22 5 20 3.5 17 3.5ZM6.25 14.5C6.25 14.91 5.91 15.25 5.5 15.25C5.09 15.25 4.75 14.91 4.75 14.5V9.5C4.75 9.09 5.09 8.75 5.5 8.75C5.91 8.75 6.25 9.09 6.25 9.5V14.5ZM12 15C10.34 15 9 13.66 9 12C9 10.34 10.34 9 12 9C13.66 9 15 10.34 15 12C15 13.66 13.66 15 12 15ZM19.25 14.5C19.25 14.91 18.91 15.25 18.5 15.25C18.09 15.25 17.75 14.91 17.75 14.5V9.5C17.75 9.09 18.09 8.75 18.5 8.75C18.91 8.75 19.25 9.09 19.25 9.5V14.5Z"
+                            fill="white"
+                          />
+                        </svg>
+                        <p><span id="rate"></span> = 1 USD</p>
+                      </div>
+                      <div class="flex items-center">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          class="bg-primary rounded-full mr-2 p-[0.2rem]"
+                          width="28"
+                          height="28"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                        >
+                          <path
+                            d="M15.78 2H8.22C4.44 2 3.5 3.01 3.5 7.04V18.3C3.5 20.96 4.96 21.59 6.73 19.69L6.74 19.68C7.56 18.81 8.81 18.88 9.52 19.83L10.53 21.18C11.34 22.25 12.65 22.25 13.46 21.18L14.47 19.83C15.19 18.87 16.44 18.8 17.26 19.68C19.04 21.58 20.49 20.95 20.49 18.29V7.04C20.5 3.01 19.56 2 15.78 2ZM9 7C9.55 7 10 7.45 10 8C10 8.55 9.56 9 9 9C8.44 9 8 8.55 8 8C8 7.45 8.44 7 9 7ZM15 14C14.44 14 14 13.55 14 13C14 12.45 14.45 12 15 12C15.55 12 16 12.45 16 13C16 13.55 15.56 14 15 14ZM15.9 7.59L9.17 14.32C9.02 14.47 8.83 14.54 8.64 14.54C8.45 14.54 8.26 14.47 8.11 14.32C7.82 14.03 7.82 13.55 8.11 13.26L14.84 6.53C15.13 6.24 15.61 6.24 15.9 6.53C16.19 6.82 16.19 7.3 15.9 7.59Z"
+                            fill="white"
+                          />
+                        </svg>
+                        <p><span id="rate"></span> = 1 USD</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div>
+                    <label
+                      for="buy-amount"
+                      class="text-sm font-medium text-[#344054]"
+                    >
+                      I will recieve
+                    </label>
+                    <div class="flex w-full mt-2">
+                      <input
+                        type="number"
+                        name="buy-amunt"
+                        id="buy-amount"
+                        placeholder="NGN"
+                        class="w-[25%] rounded-s-md border-gray-300 border-r-2 focus:ring-0 focus:border-gray-300"
+                      />
+                      <input
+                        type="number"
+                        name="buy-amunt"
+                        id="buy-amunt"
+                        placeholder="20,0000"
+                        class="w-[75%] text-black rounded-e-md border-gray-300 border-l-0 focus:ring-0 focus:border-gray-300"
+                      />
+                    </div>
+                  </div>
+                </div>
+
+                <div class="hidden md:block">
+                  <div
+                    class="flex justify-between items-center bg-amber-50 my-10 py-2 px-4 rounded-xl"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="32"
+                      height="32"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                    >
+                      <path
+                        d="M12 2C6.49 2 2 6.49 2 12C2 17.51 6.49 22 12 22C17.51 22 22 17.51 22 12C22 6.49 17.51 2 12 2ZM11.25 8C11.25 7.59 11.59 7.25 12 7.25C12.41 7.25 12.75 7.59 12.75 8V13C12.75 13.41 12.41 13.75 12 13.75C11.59 13.75 11.25 13.41 11.25 13V8ZM12.92 16.38C12.87 16.51 12.8 16.61 12.71 16.71C12.61 16.8 12.5 16.87 12.38 16.92C12.26 16.97 12.13 17 12 17C11.87 17 11.74 16.97 11.62 16.92C11.5 16.87 11.39 16.8 11.29 16.71C11.2 16.61 11.13 16.51 11.08 16.38C11.03 16.26 11 16.13 11 16C11 15.87 11.03 15.74 11.08 15.62C11.13 15.5 11.2 15.39 11.29 15.29C11.39 15.2 11.5 15.13 11.62 15.08C11.86 14.98 12.14 14.98 12.38 15.08C12.5 15.13 12.61 15.2 12.71 15.29C12.8 15.39 12.87 15.5 12.92 15.62C12.97 15.74 13 15.87 13 16C13 16.13 12.97 16.26 12.92 16.38Z"
+                        fill="#B58D16"
+                      />
+                    </svg>
+                    <p class="text-sm text-yellow-900 ml-2">
+                      Click on “I have made paymets button only after you have
+                      made payments to the sellers account.
+                    </p>
+                  </div>
+
+                  <div class="flex justify-between max-w-[22.5rem] mb-4 mt-12">
+                    <a
+                      class="text-sm font-medium border border-primary rounded-3xl py-1.5 px-4 hover:bg-[#cad5ede6]"
+                      href="p2pSellers.html"
+                    >
+                      Cancel
+                    </a>
+
+                    <a
+                      class="text-sm font-medium border bg-primary text-white rounded-3xl py-1.5 px-4 hover:bg-[#101828e8]"
+                      onclick="toggle()"
+                    >
+                      I have made payments
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="md:hidden">
+              <div
+                class="flex justify-between items-center bg-amber-50 my-10 py-2 px-4 rounded-xl"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="32"
+                  height="32"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                >
+                  <path
+                    d="M12 2C6.49 2 2 6.49 2 12C2 17.51 6.49 22 12 22C17.51 22 22 17.51 22 12C22 6.49 17.51 2 12 2ZM11.25 8C11.25 7.59 11.59 7.25 12 7.25C12.41 7.25 12.75 7.59 12.75 8V13C12.75 13.41 12.41 13.75 12 13.75C11.59 13.75 11.25 13.41 11.25 13V8ZM12.92 16.38C12.87 16.51 12.8 16.61 12.71 16.71C12.61 16.8 12.5 16.87 12.38 16.92C12.26 16.97 12.13 17 12 17C11.87 17 11.74 16.97 11.62 16.92C11.5 16.87 11.39 16.8 11.29 16.71C11.2 16.61 11.13 16.51 11.08 16.38C11.03 16.26 11 16.13 11 16C11 15.87 11.03 15.74 11.08 15.62C11.13 15.5 11.2 15.39 11.29 15.29C11.39 15.2 11.5 15.13 11.62 15.08C11.86 14.98 12.14 14.98 12.38 15.08C12.5 15.13 12.61 15.2 12.71 15.29C12.8 15.39 12.87 15.5 12.92 15.62C12.97 15.74 13 15.87 13 16C13 16.13 12.97 16.26 12.92 16.38Z"
+                    fill="#B58D16"
+                  />
+                </svg>
+                <p class="text-sm text-yellow-900 ml-2">
+                  Click on “I have made paymets button only after you have made
+                  payments to the sellers account.
+                </p>
+              </div>
+
+              <div class="flex justify-between max-w-[22.5rem] mb-4 mt-12">
+                <a
+                  class="text-sm font-medium border border-primary rounded-3xl py-2 px-6 hover:bg-[#cad5ede6]"
+                  href="p2pSellers.html"
+                >
+                  Cancel
+                </a>
+
+                <a
+                  class="text-sm font-medium border bg-primary text-white rounded-3xl py-2 px-6 hover:bg-[#101828e8]"
+                  onclick="toggle()"
+                >
+                  I have made payments
+                </a>
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+
+      <div
+        id="sellerModal"
+        class="w-full bg-white invisible opacity-0 top-[90%] left-1/2 rounded-t-3xl p-4 pt-8 md:w-2/3 md:rounded-3xl lg:w-1/2"
+      >
+        <button
+          onclick="toggle()"
+          class="fixed bottom-[105%] right-[3%] md:bottom-[102%] md:right-0"
+        >
+          <img src="src/images/close.png" alt="" />
+        </button>
+        <div class="md:w-5/6 mx-auto text-center">
+          <div>
+            <svg xmlns="http://www.w3.org/2000/svg" class="mx-auto" width="64" height="64" viewBox="0 0 64 64" fill="none">
+              <path d="M31.9997 60.6667C16.1863 60.6667 3.33301 47.8133 3.33301 32C3.33301 16.1867 16.1863 3.33334 31.9997 3.33334C47.813 3.33334 60.6663 16.1867 60.6663 32C60.6663 47.8133 47.813 60.6667 31.9997 60.6667ZM31.9997 7.33334C18.3997 7.33334 7.33301 18.4 7.33301 32C7.33301 45.6 18.3997 56.6667 31.9997 56.6667C45.5997 56.6667 56.6663 45.6 56.6663 32C56.6663 18.4 45.5997 7.33334 31.9997 7.33334Z" fill="#12B76A"/>
+              <path d="M28.2129 41.5467C27.6795 41.5467 27.1729 41.3333 26.7995 40.96L19.2529 33.4133C18.4795 32.64 18.4795 31.36 19.2529 30.5867C20.0262 29.8133 21.3062 29.8133 22.0795 30.5867L28.2129 36.72L41.9195 23.0133C42.6929 22.24 43.9729 22.24 44.7462 23.0133C45.5195 23.7867 45.5195 25.0667 44.7462 25.84L29.6262 40.96C29.2529 41.3333 28.7462 41.5467 28.2129 41.5467Z" fill="#12B76A"/>
+            </svg>
+          </div>
+          <div class="font-bold my-6">
+            <p class="text-gray-500">You have successfully purchased </p>
+            <p class="text-[32px] my-2">NGN 20,000</p>
+            <p>Worth of BTC</p>
+          </div>
+          <div class="p-4 bg-gray-100 rounded-2xl">
+            <div class="flex justify-between">
+              <p class="text-gray-500">Naira amount</p>
+              <p class="font-bold">20,000</p>
+            </div>
+            <div class="flex justify-between my-4">
+              <p class="text-gray-500">Bitcoin amount</p>
+              <p class="font-bold">00010836439</p>
+            </div>
+            <div class="flex">
+              <p class="text-gray-500 mr-auto">Reference</p>
+              <p class="font-bold mr-1">00010836439</p>
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path d="M16 12.9V17.1C16 20.6 14.6 22 11.1 22H6.9C3.4 22 2 20.6 2 17.1V12.9C2 9.4 3.4 8 6.9 8H11.1C14.6 8 16 9.4 16 12.9Z" fill="#848484"/>
+                <path d="M17.0998 2H12.8998C9.81668 2 8.37074 3.09409 8.06951 5.73901C8.00649 6.29235 8.46476 6.75 9.02167 6.75H11.0998C15.2998 6.75 17.2498 8.7 17.2498 12.9V14.9781C17.2498 15.535 17.7074 15.9933 18.2608 15.9303C20.9057 15.629 21.9998 14.1831 21.9998 11.1V6.9C21.9998 3.4 20.5998 2 17.0998 2Z" fill="#848484"/>
+              </svg>
+            </div>
+            <div class="flex items-center">
+              <p class="opacity-80 mr-2">Veiw reciept</p>
+              <svg class="w-4 h-4 text-gray-900" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 18">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11v4.833A1.166 1.166 0 0 1 13.833 17H2.167A1.167 1.167 0 0 1 1 15.833V4.167A1.166 1.166 0 0 1 2.167 3h4.618m4.447-2H17v5.768M9.111 8.889l7.778-7.778"/>
+              </svg>
+            </div>
+          </div>
+          <div class="flex justify-between max-w-[22.5rem] mx-auto mb-4 mt-7">
+            <a
+              class="text-sm font-medium border border-primary rounded-3xl py-2 px-6 hover:bg-[#cad5ede6]"
+              onclick="toggle()"
+            >
+              Another transaction
+            </a>
+
+            <a
+              class="text-sm font-medium border bg-primary text-white rounded-3xl py-2 px-6 hover:bg-[#101828e8]"
+              href="/index.html"
+            >
+              Go to home
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

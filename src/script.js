@@ -267,6 +267,9 @@ function populateTable() {
   }
 }
 
+document.addEventListener("DOMContentLoaded", function () {
+  populateTable();
+});
 
 // JavaScript code to load asset details based on the ID from the URL
 document.addEventListener("DOMContentLoaded", function () {
@@ -298,7 +301,4 @@ function getAssetDetailsById(assetId) {
   return null;
 }
 
-document.addEventListener("DOMContentLoaded", function () {
-  populateTable();
-});
 

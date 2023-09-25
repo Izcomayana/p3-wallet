@@ -14,7 +14,7 @@
         class="container transition-all relative min-h-screen md:max-w-[100vw] lg:max-w-[100vw]"
       >
         <header id="header"></header>
-        
+
         <main>
           <div class="w-full bg-white rounded-t-3xl p-4 pt-8 md:rounded-3xl">
             <form class="my-4 mx-auto md:w-1/2" onsubmit="return false">
@@ -30,16 +30,16 @@
                 <select
                   name="coin"
                   id="coinSelect"
-                  class="w-full rounded-xl border-gray-300 focus:ring-0 focus:border-gray-300"
+                  class="w-full rounded-xl cursor-pointer border-gray-300 focus:ring-0 focus:border-gray-300"
                 >
-                  <option class="text-gray-300" value="bitcoin" selected>
+                  <option value="bitcoin" class="rounded-xl" selected>
                     Bitcoin
                   </option>
-                  <option class="text-gray-300" value="ethereum">
+                  <option value="ethereum">
                     Ethereum
                   </option>
-                  <option class="text-gray-300" value="usdoin">USD Coin</option>
-                  <option class="text-gray-300" value="tether">Tether</option>
+                  <option value="usdoin">USD Coin</option>
+                  <option value="tether">Tether</option>
                 </select>
 
                 <!-- <button
@@ -162,6 +162,7 @@
                   />
                 </div>
               </div>
+              
               <div class="flex justify-between max-w-[22.5rem] mb-4 mt-12">
                 <button
                   class="text-sm font-medium border border-primary rounded-3xl py-1.5 px-14 hover:bg-[#cad5ede6]"
