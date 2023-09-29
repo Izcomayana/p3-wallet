@@ -4,17 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="/dist/output.css" rel="stylesheet" />
-    <script src="script.js"></script>
+    <script src="portfolioAsset.js"></script>
     <title>p3 Wallet</title>
   </head>
   <body>
     <header id="header"></header>
 
-    
     <main>
-      <div class="px-6 lg:w-3/5 m-auto">
+      <div class="px-6 lg:w-9/12 m-auto">
         <div class="w-fit">
-          <a href="index.html" class="flex items-center my-4">
+          <a href="cryptoWallet.html" class="flex items-center my-4">
             <svg
               class="w-4 h-4 mr-2 text-gray-500"
               aria-hidden="true"
@@ -35,7 +34,8 @@
         </div>
 
         <div>
-          <div class="justify-between items-center border-b py-4 md:flex ">
+          <p>Portfolio Asset</p>
+          <div class="justify-between items-center border-b py-4 md:flex">
             <div>
               <div class="flex items-center mb-2">
                 <div id="assetImg"></div>
@@ -109,7 +109,7 @@
               All your Bitcoin transactions will show up here
             </p>
             <div class="w-14 h-14">
-              <img src="images/file.png" alt="file" />
+              <img src="/src/images/file.png" alt="file" />
             </div>
             <button
               class="px-6 py-3 rounded-[29px] border border-black text-black font-medium font-['Satoshi'] leading-none"
@@ -117,6 +117,63 @@
               Buy bitcoin
             </button>
           </div>
+        </div>
+
+        <div class="md:flex md:justify-between md:items-center">
+          <p class="text-lg font-medium">Transactions</p>
+          <ul
+            class="flex justify-between gap-6 w-fit bg-[#F6F6F6] rounded-3xl my-4 mb-6 py-3 px-6 md:mb-0"
+          >
+            <button
+              class="cursor-pointer text-primary active"
+              id="allBtn"
+              onclick="showAll()"
+            >
+              All
+            </button>
+            <button
+              class="cursor-pointer text-primary"
+              id="recievedBtn"
+              onclick="showRecieved()"
+            >
+              Recieved
+            </button>
+            <button
+              class="cursor-pointer text-primary"
+              id="sentBtn"
+              onclick="showSent()"
+            >
+              Sent
+            </button>
+          </ul>
+          <div class="flex items-center justify-between w-3/5 md:justify-end">
+            <button
+              class="px-6 py-3 rounded-[29px] border border-black text-black font-medium font-['Satoshi'] leading-none"
+            >
+              Download
+            </button>
+          </div>
+        </div>
+
+        <div class="relative overflow-x-auto my-10">
+          <table class="w-full text-left">
+            <thead
+              class="hidden md:table-header-group text-gray-500 text-xs border-b"
+            >
+              <tr>
+                <th scope="col" class="pY-4 pl-4">Type</th>
+                <th scope="col" class="hidden lg:table-cell py-4">Address</th>
+                <th
+                  scope="col"
+                  class="hidden text-right pr-4 lg:table-cell pY-4"
+                >
+                  Amount
+                </th>
+                <th scope="col" class="py-4 pl-4">Status</th>
+              </tr>
+            </thead>
+            <tbody class="text-sm divide-y" id="transactionTable"></tbody>
+          </table>
         </div>
       </div>
     </main>

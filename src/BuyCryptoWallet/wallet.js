@@ -1,22 +1,9 @@
-fetch('/src/header.html')
-.then(response => response.text())
-.then(headerHtml => {
-    document.getElementById('header').innerHTML = headerHtml;
+fetch("/src/header.html")
+.then((response) => response.text())
+.then((headerHtml) => {
+  document.getElementById("header").innerHTML = headerHtml;
 })
-.catch(error => console.error('Error loading header:', error));
-
-function toggle() {
-  var blur = document.querySelector("#blur");
-  blur.classList.toggle("active");
-
-  var modal = document.querySelector("#modal");
-  modal.classList.toggle("active");
-}
-
-function closeCom() {
-  const complete = document.querySelector("#complete");
-  complete.classList.add("close");
-}
+.catch((error) => console.error("Error loading header:", error));
 
 function toggleBal() {
   const balance = document.querySelector("#balance");
@@ -32,10 +19,14 @@ function toggleBal() {
   hideIcn.classList.toggle("show");
 }
 
+function toggleP2P() {
+  const P2PDropdown = document.querySelector("#P2PDropdown");
+  P2PDropdown.classList.toggle("show");
+}
 
-function toggleP2P () {
-  const P2PDropdown = document.querySelector('#P2PDropdown');
-  P2PDropdown.classList.toggle('show');
+function togglePortP2P() {
+  const P2PDropdown = document.querySelector("#portP2PDropdown");
+  P2PDropdown.classList.toggle("show");
 }
 
 function showCrypto() {
@@ -66,10 +57,18 @@ function showPortfolio() {
   portfolio.classList.add("show");
 }
 
+function toggle() {
+  var blur = document.querySelector("#blur");
+  blur.classList.toggle("active");
+
+  var modal = document.querySelector("#modal");
+  modal.classList.toggle("active");
+}
+
 var assets = [
   {
     id: 1,
-    imgSrc: "images/btc-logo.png",
+    imgSrc: "/src/images/btc-logo.png",
     alt: "BTC",
     name: "Bitcoin",
     price: 19803.24,
@@ -79,7 +78,7 @@ var assets = [
   },
   {
     id: 2,
-    imgSrc: "images/ethereum.png",
+    imgSrc: "/src/images/ethereum.png",
     alt: "ETH",
     name: "Ethereum",
     price: 19803.24,
@@ -89,7 +88,7 @@ var assets = [
   },
   {
     id: 3,
-    imgSrc: "images/usd-coin.png",
+    imgSrc: "/src/images/usd-coin.png",
     alt: "USDC",
     name: "USD Coin",
     price: 19803.24,
@@ -99,7 +98,7 @@ var assets = [
   },
   {
     id: 4,
-    imgSrc: "images/tether.png",
+    imgSrc: "/src/images/tether.png",
     alt: "USDT",
     name: "Tether",
     price: 19803.24,
@@ -132,7 +131,7 @@ function populateTable() {
 
     var cryptoRow = `
       <tr class="bg-white">
-        <th scope="row" class="flex items-center p-4 font-normal">
+        <th id="cryptoHead" scope="row" class="cryptoHead flex items-center p-4 font-normal">
           <div class="mr-3">
             <img src=${asset.imgSrc} alt=${asset.alt} />
           </div>
@@ -160,100 +159,122 @@ function populateTable() {
     cryptoBody.innerHTML = cryptoRow;
 
     var portfolioRow = `
-      <tr class="bg-white">
-        <th scope="row" class="flex items-center p-4 font-normal">
-          <div class="mr-3">
-            <img src=${asset.imgSrc} alt=${asset.alt} />
-          </div>
-          <div>
-            <div class="flex mb-2 md:mb-0">
-              <p class="mr-[6px] font-medium">${asset.name}</p>
-              <p class="text-gray-500">${asset.alt}</p>
+        <tr class="bg-white">
+          <th id="portfolioHead" scope="row" class="flex items-center p-4 font-normal">
+            <div class="mr-3">
+              <img src=${asset.imgSrc} alt=${asset.alt} />
             </div>
-            <div class="flex md:hidden">
-              <p class="mb-1">$${asset.price}</p>
-              <p
-                class="flex items-center bg-[#FEF3F2] text-[#DF1111] text-xs font-medium w-fit px-2 rounded-2xl"
-              >
-                <svg
-                  class="w-3 h-3 text-[#DF1111] mr-1 dark:text-white"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 10 14"
+            <div>
+              <div class="flex mb-2 md:mb-0">
+                <p class="mr-[6px] font-medium">${asset.name}</p>
+                <p class="text-gray-500">${asset.alt}</p>
+              </div>
+              <div class="flex items-center md:hidden">
+                <p class="mr-1 text-xs">$${asset.price}</p>
+                <p
+                  class="flex items-center bg-[#FEF3F2] text-[#DF1111] text-[10px] font-medium w-fit px-1 rounded-2xl"
                 >
-                  <path
+                  <svg
+                    class="w-2 h-2 text-[#DF1111] mr-1"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 10 14"
+                  >
+                    <path
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="1.8"
+                      d="M5 1v12m0 0 4-4m-4 4L1 9"
+                    />
+                  </svg>
+                  ${asset.percentage}%
+                </p>
+              </div>
+            </div>
+          </th>
+          <td class="hidden md:table-cell p-4">
+            <p class="mb-1">$${asset.price}</p>
+            <p
+              class="flex items-center bg-[#FEF3F2] text-[#DF1111] text-xs font-medium w-fit px-2 rounded-2xl"
+            >
+              <svg
+                class="w-3 h-3 text-[#DF1111] mr-1 dark:text-white"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 10 14"
+              >
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="1.8"
+                  d="M5 1v12m0 0 4-4m-4 4L1 9"
+                />
+              </svg>
+              ${asset.percentage}%
+            </p>
+          </td>
+          <td class="p-4">
+            <p class="text-xs font-medium mb-2 md:text-sm">USD ${asset.USDbalance}</p>
+            <p class="text-[10px] text-gray-500 md:text-xs">${asset.alt} ${asset.cryptoBalance}</p>
+          </td>
+          <td class="hidden md:table-cell p-4" onclick="togglePortP2P(${asset.id})">
+            <div class="relative">
+              <svg
+                class="w-[24px] h-[24px] text-gray-500 dark:text-white"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 17 4"
+                >
+                <path
                     stroke="currentColor"
                     stroke-linecap="round"
-                    stroke-linejoin="round"
                     stroke-width="1.8"
-                    d="M5 1v12m0 0 4-4m-4 4L1 9"
-                  />
-                </svg>
-                ${asset.percentage}%
-              </p>
+                    d="M2.49 2h.01m6 0h.01m5.99 0h.01"
+                />
+              </svg>
+              <div id="portP2PDropdown" class="hidden absolute bg-white z-10 left-[-3rem] mt-2 rounded-md shadow-lg">
+                <div class="flex flex-col">
+                  <a
+                    href="buy/p2pAmount.html"
+                    class="flex items-center text-primary py-2 px-5 rounded-md hover:bg-[#050f388d] transition-all"
+                  >
+                    P2P
+                  </a>
+
+                  <a
+                    href="#"
+                    class="flex items-center text-primary py-4 px-5 rounded-md hover:bg-[#050f388d] transition-all"
+                  >
+                    Wallet
+                  </a>
+                </div>
+              </div>
             </div>
-          </div>
-        </th>
-        <td class="hidden md:table-cell p-4">
-          <p class="mb-1">$${asset.price}</p>
-          <p
-            class="flex items-center bg-[#FEF3F2] text-[#DF1111] text-xs font-medium w-fit px-2 rounded-2xl"
-          >
-            <svg
-              class="w-3 h-3 text-[#DF1111] mr-1 dark:text-white"
-              aria-hidden="true"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 10 14"
-            >
-              <path
-                stroke="currentColor"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="1.8"
-                d="M5 1v12m0 0 4-4m-4 4L1 9"
-              />
-            </svg>
-            ${asset.percentage}%
-          </p>
-        </td>
-        <td class="p-4">
-          <p class="text-sm font-medium mb-2">USD ${asset.USDbalance}</p>
-          <p class="text-xs text-gray-500">${asset.alt} ${asset.cryptoBalance}</p>
-        </td>
-        <td class="hidden md:table-cell p-4">
-          <svg
-            class="w-[24px] h-[24px] text-gray-500 dark:text-white"
-            aria-hidden="true"
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 17 4"
-          >
-            <path
-              stroke="currentColor"
-              stroke-linecap="round"
-              stroke-width="1.8"
-              d="M2.49 2h.01m6 0h.01m5.99 0h.01"
-            />
-          </svg>
-        </td>
-      </tr>
-    `;
+          </td>
+        </tr>
+      `;
 
     portfolioBody.innerHTML = portfolioRow;
 
     // Use a closure to capture the correct clickedId value
     (function (clickedId) {
+      var cryptoHead = document.querySelector('#cryptoHead');
       // Add a click event listener to navigate to a dynamic route when a row is clicked
-      cryptoBody.addEventListener("click", function () {
+      cryptoHead.addEventListener("click", function () {
         // Navigate to the dynamic route based on the ID
-        window.location.href = "item.html?id=" + clickedId;
+        window.location.href = "depositAsset.html?id=" + clickedId;
       });
 
-      portfolioBody.addEventListener("click", function () {
+      const portfolioHead = document.querySelector('#portfolioHead');
+      // Add a click event listener to navigate to a dynamic route when a row is clicked
+      portfolioHead.addEventListener("click", function () {
         // Navigate to the dynamic route based on the ID
-        window.location.href = "item.html?id=" + clickedId;
+        window.location.href = "portfolioAsset.html?id=" + clickedId;
       });
     })(asset.id);
   }
@@ -286,11 +307,9 @@ document.addEventListener("DOMContentLoaded", function () {
 function getAssetDetailsById(assetId) {
   for (var i = 0; i < assets.length; i++) {
     if (assets[i].id === parseInt(assetId)) {
-        return assets[i]; // Return the matching item
+      return assets[i]; // Return the matching item
     }
   }
 
   return null;
 }
-
-

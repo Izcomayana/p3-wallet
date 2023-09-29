@@ -7,7 +7,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.8.1/flowbite.min.js"></script>
     <script src="../path/to/flowbite/dist/flowbite.min.js"></script> -->
     <link href="/dist/output.css" rel="stylesheet" />
-    <script src="script.js"></script>
+    <script src="wallet.js"></script>
     <title>p3 Wallet</title>
   </head>
   <body>
@@ -19,78 +19,7 @@
         <header id="header"></header>
 
         <main>
-          <div class="my-4 lg:w-2/3 m-auto" id="details">
-            <div
-              class="border-2 rounded-xl p-4 mx-4 md:flex md:justify-between"
-              id="complete"
-            >
-              <div>
-                <div class="flex justify-between">
-                  <h1 class="text-base font-bold lg:text-2xl lg:font-semibold">
-                    Complete your profile
-                  </h1>
-                  <button
-                    type="button"
-                    class="text-gray-50 bg-gray-400 hover:text-gray-900 rounded-full text-xs w-[1.35rem] h-[1.35rem] ml-auto inline-flex justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white md:hidden"
-                    onclick="closeCom()"
-                  >
-                    <svg
-                      class="w-2 h-2"
-                      aria-hidden="true"
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 14 14"
-                    >
-                      <path
-                        stroke="currentColor"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"
-                      />
-                    </svg>
-                  </button>
-                </div>
-                <div>
-                  <p
-                    class="text-sm text-[#667085] pt-2 lg:text-base lg:w-[65%]"
-                  >
-                    Finish setting up your P3 Wallet To buy, sell and recieve
-                    cryto without limits.
-                  </p>
-                </div>
-              </div>
-              <div class="md:text-right md:min-w-[30%]">
-                <button
-                  class="bg-primary text-white text-sm rounded-3xl mt-4 mr-6 py-3 px-4 cursor-pointer transition-all hover:bg-[#101828e1] md:mt-0 md:py-2"
-                  onclick="toggle()"
-                >
-                  Get Started
-                </button>
-                <button
-                  type="button"
-                  class="text-gray-50 bg-gray-400 hidden md:inline-flex hover:text-gray-900 rounded-full text-xs w-[1.35rem] h-[1.35rem] ml-auto justify-center items-center dark:hover:bg-gray-600 dark:hover:text-white"
-                  onclick="closeCom()"
-                >
-                  <svg
-                    class="w-2 h-2"
-                    aria-hidden="true"
-                    xmlns="http://www.w3.org/2000/svg"
-                    fill="none"
-                    viewBox="0 0 14 14"
-                  >
-                    <path
-                      stroke="currentColor"
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="m1 1 6 6m0 0 6 6M7 7l6-6M7 7l-6 6"
-                    />
-                  </svg>
-                </button>
-              </div>
-            </div>
-
+          <div class="my-4 mb-20 lg:w-3/5 m-auto" id="details">
             <div class="py-4 mx-4 my-6 md:flex md:justify-between">
               <div>
                 <div class="flex items-center text-[#667085] text-sm">
@@ -177,53 +106,36 @@
                 <div class="flex justify-between mb-4 mt-8">
                   <div>
                     <button
-                      class="flex items-center text-base font-medium border bg-primary text-white rounded-3xl py-3 px-8 hover:bg-[#101828e8] md:py-2 md:px-6 md:mr-6"
+                      class="flex items-center text-sm font-medium border bg-primary text-white rounded-3xl py-2 px-3 hover:bg-[#101828e8] md:text-base md:mr-6"
                       onclick="toggleP2P()"
                     >
                       <svg
-                        class="w-6 h-6 mr-2 text-gray-50 dark:text-white"
-                        aria-hidden="true"
+                        class="mr-1"
                         xmlns="http://www.w3.org/2000/svg"
-                        fill="currentColor"
-                        viewBox="0 0 20 18"
+                        width="16"
+                        height="16"
+                        viewBox="0 0 24 24"
+                        fill="none"
                       >
                         <path
-                          d="M14 2a3.963 3.963 0 0 0-1.4.267 6.439 6.439 0 0 1-1.331 6.638A4 4 0 1 0 14 2Zm1 9h-1.264A6.957 6.957 0 0 1 15 15v2a2.97 2.97 0 0 1-.184 1H19a1 1 0 0 0 1-1v-1a5.006 5.006 0 0 0-5-5ZM6.5 9a4.5 4.5 0 1 0 0-9 4.5 4.5 0 0 0 0 9ZM8 10H5a5.006 5.006 0 0 0-5 5v2a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1v-2a5.006 5.006 0 0 0-5-5Z"
+                          d="M12 2C6.49 2 2 6.49 2 12C2 17.51 6.49 22 12 22C17.51 22 22 17.51 22 12C22 6.49 17.51 2 12 2ZM16 12.75H12.75V16C12.75 16.41 12.41 16.75 12 16.75C11.59 16.75 11.25 16.41 11.25 16V12.75H8C7.59 12.75 7.25 12.41 7.25 12C7.25 11.59 7.59 11.25 8 11.25H11.25V8C11.25 7.59 11.59 7.25 12 7.25C12.41 7.25 12.75 7.59 12.75 8V11.25H16C16.41 11.25 16.75 11.59 16.75 12C16.75 12.41 16.41 12.75 16 12.75Z"
+                          fill="white"
                         />
                       </svg>
-                      P2 trade
+                      Add Crypto
                     </button>
 
-                    <div id="P2PDropdown" class="hidden mt-2 rounded-md shadow-lg">
+                    <div
+                      id="P2PDropdown"
+                      class="hidden mt-2 rounded-md shadow-lg"
+                    >
                       <div class="flex flex-col">
                         <a
-                          href="buy/p2pAmount.html"
-                          class="flex items-center text-primary py-4 px-3 rounded-md hover:bg-[#050f388d] transition-all"
+                          href="cryptoDeposit.html"
+                          class="flex items-center text-primary py-2 px-5 rounded-md hover:bg-[#050f388d] transition-all"
                         >
                           <svg
-                            class="w-[1.3rem] h-[1.3rem] bg-primary text-white rounded-full mr-1 p-[0.3rem]"
-                            aria-hidden="true"
-                            xmlns="http://www.w3.org/2000/svg"
-                            fill="none"
-                            viewBox="0 0 18 18"
-                          >
-                            <path
-                              stroke="currentColor"
-                              stroke-linecap="round"
-                              stroke-linejoin="round"
-                              stroke-width="2"
-                              d="M9 1v16M1 9h16"
-                            />
-                          </svg>
-                          P2P buy
-                        </a>
-    
-                        <a
-                          href="#"
-                          class="flex items-center text-primary py-4 px-3 rounded-md hover:bg-[#050f388d] transition-all"
-                        >
-                          <svg
-                            class="mr-1"
+                            class="mr-2"
                             xmlns="http://www.w3.org/2000/svg"
                             width="24"
                             height="24"
@@ -231,35 +143,82 @@
                             fill="none"
                           >
                             <path
-                              d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM17.25 12.33C17.25 12.74 16.91 13.08 16.5 13.08C16.09 13.08 15.75 12.74 15.75 12.33V9.31L8.03 17.03C7.88 17.18 7.69 17.25 7.5 17.25C7.31 17.25 7.12 17.18 6.97 17.03C6.68 16.74 6.68 16.26 6.97 15.97L14.69 8.25H11.67C11.26 8.25 10.92 7.91 10.92 7.5C10.92 7.09 11.26 6.75 11.67 6.75H16.5C16.91 6.75 17.25 7.09 17.25 7.5V12.33Z"
+                              d="M9 2C6.38 2 4.25 4.13 4.25 6.75C4.25 9.32 6.26 11.4 8.88 11.49C8.96 11.48 9.04 11.48 9.1 11.49C9.12 11.49 9.13 11.49 9.15 11.49C9.16 11.49 9.16 11.49 9.17 11.49C11.73 11.4 13.74 9.32 13.75 6.75C13.75 4.13 11.62 2 9 2Z"
+                              fill="#101828"
+                            />
+                            <path
+                              d="M14.08 14.15C11.29 12.29 6.73996 12.29 3.92996 14.15C2.65996 15 1.95996 16.15 1.95996 17.38C1.95996 18.61 2.65996 19.75 3.91996 20.59C5.31996 21.53 7.15996 22 8.99996 22C10.84 22 12.68 21.53 14.08 20.59C15.34 19.74 16.04 18.6 16.04 17.36C16.03 16.13 15.34 14.99 14.08 14.15Z"
+                              fill="#101828"
+                            />
+                            <path
+                              d="M19.9904 7.34C20.1504 9.28 18.7704 10.98 16.8604 11.21C16.8504 11.21 16.8504 11.21 16.8404 11.21H16.8104C16.7504 11.21 16.6904 11.21 16.6404 11.23C15.6704 11.28 14.7804 10.97 14.1104 10.4C15.1404 9.48 15.7304 8.1 15.6104 6.6C15.5404 5.79 15.2604 5.05 14.8404 4.42C15.2204 4.23 15.6604 4.11 16.1104 4.07C18.0704 3.9 19.8204 5.36 19.9904 7.34Z"
+                              fill="#101828"
+                            />
+                            <path
+                              d="M21.9902 16.59C21.9102 17.56 21.2902 18.4 20.2502 18.97C19.2502 19.52 17.9902 19.78 16.7402 19.75C17.4602 19.1 17.8802 18.29 17.9602 17.43C18.0602 16.19 17.4702 15 16.2902 14.05C15.6202 13.52 14.8402 13.1 13.9902 12.79C16.2002 12.15 18.9802 12.58 20.6902 13.96C21.6102 14.7 22.0802 15.63 21.9902 16.59Z"
                               fill="#101828"
                             />
                           </svg>
-                          P2P sell
+                          P2P
+                        </a>
+
+                        <a
+                          href="cryptoDeposit.html"
+                          class="flex items-center text-primary py-4 px-5 rounded-md hover:bg-[#050f388d] transition-all"
+                        >
+                          <svg
+                            class="mr-2"
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                          >
+                            <path
+                              d="M7.1698 22.75C4.7898 22.75 2.83984 21.02 2.83984 18.89V16.85C2.83984 16.44 3.17984 16.1 3.58984 16.1C3.99984 16.1 4.33984 16.44 4.33984 16.85C4.33984 18.1 5.5498 19.04 7.1698 19.04C8.7898 19.04 9.99982 18.1 9.99982 16.85C9.99982 16.44 10.3398 16.1 10.7498 16.1C11.1598 16.1 11.4998 16.44 11.4998 16.85V18.89C11.4998 21.02 9.5598 22.75 7.1698 22.75ZM4.59979 19.87C5.03979 20.69 6.0298 21.25 7.1698 21.25C8.3098 21.25 9.29981 20.68 9.73981 19.87C9.02981 20.3 8.1498 20.55 7.1698 20.55C6.1898 20.55 5.30979 20.3 4.59979 19.87Z"
+                              fill="#101828"
+                            />
+                            <path
+                              d="M7.1698 17.7999C5.5298 17.7999 4.05983 17.0499 3.32983 15.8599C3.00983 15.3399 2.83984 14.7299 2.83984 14.1099C2.83984 13.0599 3.29983 12.0799 4.13983 11.3499C5.75983 9.92992 8.54981 9.92997 10.1798 11.34C11.0198 12.08 11.4898 13.0599 11.4898 14.1099C11.4898 14.7299 11.3198 15.3399 10.9998 15.8599C10.2798 17.0499 8.8098 17.7999 7.1698 17.7999ZM7.1698 11.7499C6.3898 11.7499 5.66982 12.0099 5.12982 12.4799C4.61982 12.9199 4.33984 13.4999 4.33984 14.1099C4.33984 14.4599 4.4298 14.78 4.6098 15.08C5.0698 15.84 6.0498 16.3099 7.1698 16.3099C8.2898 16.3099 9.26979 15.84 9.71979 15.09C9.89979 14.8 9.98981 14.4699 9.98981 14.1199C9.98981 13.5099 9.70983 12.9299 9.19983 12.4799C8.66983 12.0099 7.9498 11.7499 7.1698 11.7499Z"
+                              fill="#101828"
+                            />
+                            <path
+                              d="M7.1698 20.55C4.6998 20.55 2.83984 18.96 2.83984 16.86V14.11C2.83984 11.98 4.7798 10.25 7.1698 10.25C8.2998 10.25 9.37982 10.64 10.1898 11.34C11.0298 12.08 11.4998 13.06 11.4998 14.11V16.86C11.4998 18.96 9.6398 20.55 7.1698 20.55ZM7.1698 11.75C5.6098 11.75 4.33984 12.81 4.33984 14.11V16.86C4.33984 18.11 5.5498 19.05 7.1698 19.05C8.7898 19.05 9.99982 18.11 9.99982 16.86V14.11C9.99982 13.5 9.71984 12.92 9.20984 12.47C8.66984 12.01 7.9498 11.75 7.1698 11.75Z"
+                              fill="#101828"
+                            />
+                            <path
+                              d="M19.0399 14.7999C17.5299 14.7999 16.2499 13.6799 16.1299 12.2399C16.0499 11.4099 16.3499 10.5999 16.9499 10.0099C17.4499 9.48995 18.1599 9.19995 18.9099 9.19995H20.9999C21.9899 9.22995 22.7499 10.0099 22.7499 10.9699V13.03C22.7499 13.99 21.9899 14.7699 21.0299 14.7999H19.0399ZM20.9699 10.7H18.9199C18.5699 10.7 18.2499 10.8299 18.0199 11.0699C17.7299 11.3499 17.5899 11.7299 17.6299 12.1099C17.6799 12.7699 18.3199 13.2999 19.0399 13.2999H20.9999C21.1299 13.2999 21.2499 13.18 21.2499 13.03V10.9699C21.2499 10.8199 21.1299 10.71 20.9699 10.7Z"
+                              fill="#101828"
+                            />
+                            <path
+                              d="M16.0002 21.25H13.5002C13.0902 21.25 12.7502 20.91 12.7502 20.5C12.7502 20.09 13.0902 19.75 13.5002 19.75H16.0002C18.5802 19.75 20.2502 18.08 20.2502 15.5V14.8H19.0402C17.5302 14.8 16.2502 13.68 16.1302 12.24C16.0502 11.41 16.3503 10.6 16.9503 10.01C17.4503 9.49001 18.1602 9.20001 18.9102 9.20001H20.2402V8.5C20.2402 6.16 18.8703 4.54998 16.6503 4.28998C16.4103 4.24998 16.2002 4.25 15.9902 4.25H6.99023C6.75023 4.25 6.52022 4.26999 6.29022 4.29999C4.09022 4.57999 2.74023 6.18 2.74023 8.5V10.5C2.74023 10.91 2.40023 11.25 1.99023 11.25C1.58023 11.25 1.24023 10.91 1.24023 10.5V8.5C1.24023 5.42 3.14027 3.19001 6.09027 2.82001C6.36027 2.78001 6.67023 2.75 6.99023 2.75H15.9902C16.2302 2.75 16.5402 2.76 16.8602 2.81C19.8102 3.15 21.7402 5.39 21.7402 8.5V9.95001C21.7402 10.36 21.4002 10.7 20.9902 10.7H18.9102C18.5602 10.7 18.2403 10.83 18.0103 11.07C17.7203 11.35 17.5802 11.73 17.6202 12.11C17.6702 12.77 18.3103 13.3 19.0303 13.3H21.0002C21.4102 13.3 21.7502 13.64 21.7502 14.05V15.5C21.7502 18.94 19.4402 21.25 16.0002 21.25Z"
+                              fill="#101828"
+                            />
+                          </svg>
+                          Wallet
                         </a>
                       </div>
-                    </div>
+                    </div> 
                   </div>
-                  
+
                   <div>
                     <button
-                      class="flex items-center text-base font-medium border border-primary rounded-3xl py-3 px-8 hover:bg-[#cad5ede6] md:py-2 md:px-8"
+                      class="flex items-center text-sm font-medium border border-primary rounded-3xl py-2 px-3 hover:bg-[#cad5ede6] md:text-base"
                     >
                       <svg
-                        class="w-6 h-6 mr-2 text-gray-800 dark:text-white"
-                        aria-hidden="true"
+                        class="mr-1"
                         xmlns="http://www.w3.org/2000/svg"
-                        fill="currentColor"
-                        viewBox="0 0 20 20"
+                        width="16"
+                        height="16"
+                        viewBox="0 0 24 24"
+                        fill="none"
                       >
                         <path
-                          d="M11.074 4 8.442.408A.95.95 0 0 0 7.014.254L2.926 4h8.148ZM9 13v-1a4 4 0 0 1 4-4h6V6a1 1 0 0 0-1-1H1a1 1 0 0 0-1 1v13a1 1 0 0 0 1 1h17a1 1 0 0 0 1-1v-2h-6a4 4 0 0 1-4-4Z"
-                        />
-                        <path
-                          d="M19 10h-6a2 2 0 0 0-2 2v1a2 2 0 0 0 2 2h6a1 1 0 0 0 1-1v-3a1 1 0 0 0-1-1Zm-4.5 3.5a1 1 0 1 1 0-2 1 1 0 0 1 0 2ZM12.62 4h2.78L12.539.41a1.086 1.086 0 1 0-1.7 1.352L12.62 4Z"
+                          d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM17.25 12.33C17.25 12.74 16.91 13.08 16.5 13.08C16.09 13.08 15.75 12.74 15.75 12.33V9.31L8.03 17.03C7.88 17.18 7.69 17.25 7.5 17.25C7.31 17.25 7.12 17.18 6.97 17.03C6.68 16.74 6.68 16.26 6.97 15.97L14.69 8.25H11.67C11.26 8.25 10.92 7.91 10.92 7.5C10.92 7.09 11.26 6.75 11.67 6.75H16.5C16.91 6.75 17.25 7.09 17.25 7.5V12.33Z"
+                          fill="#101828"
                         />
                       </svg>
-                      Wallet
+                      Withdraw crypto
                     </button>
                   </div>
                 </div>

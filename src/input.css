@@ -2,9 +2,37 @@
 @tailwind components;
 @tailwind utilities;
 
+#page-content {
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+}
+
+#page-content.fade-out {
+  opacity: 0;
+}
+
+/* a:hover svg {
+  fill: white;
+}
+
+a:focus svg {
+  fill: white;
+}
+
+a:active svg {
+  fill: white;
+} */
+
 .container#blur.active {
   filter: blur(2px);
   background: rgba(5, 15, 56, 0.22);
+  pointer-events: none;
+  user-select: none;
+}
+
+.container#sellerBlur.active {
+  filter: opacity(0);
+  background: rgba(255, 255, 255, 0.22);
   pointer-events: none;
   user-select: none;
 }
@@ -27,6 +55,16 @@ select#currency option[value="USA"] {
 
 #hideIcn.show {
   display: block;
+}
+
+#P2PDropdown.show {
+  display: block;
+  transition: 200ms ease-in-out;
+}
+
+#portP2PDropdown.show {
+  display: block;
+  transition: 200ms ease-in-out;
 }
 
 #balance.hide {
@@ -61,8 +99,20 @@ select#currency option[value="USA"] {
   display: table;
 }
 
+#selectContent {
+  display: none;
+}
+
+#selectContent.show {
+  display: block;
+}
+
 tr {
   border-bottom: 1px solid #E4E7EC !important;
+}
+
+th {
+  cursor: pointer;
 }
 
 .days ul> button:active {
@@ -73,6 +123,18 @@ tr {
 .days ul> button:focus {
   font-weight: 700;
   color: black;
+}
+
+#allBtn.active {
+  font-weight: 700;
+}
+
+#recievedBtn.active {
+  font-weight: 700;
+}
+
+#sentBtn.active {
+  font-weight: 700;
 }
 
 #modal {
@@ -97,6 +159,31 @@ tr {
 
 @media (min-width: 1024px) {
   #modal.active {
+    top: 20rem;
+  }
+}
+
+#sellerModal {
+  position: fixed;
+  transform: translate(-50%, -50%);
+  transition: 0.5s;
+}
+
+#sellerModal.active {
+  top: 17rem;
+  visibility: visible;
+  opacity: 1;
+  transition: 0.5s;
+}
+
+@media (min-width: 768px) {
+  #sellerModal.active {
+    top: 17rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  #sellerModal.active {
     top: 20rem;
   }
 }
