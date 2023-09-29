@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="/dist/output.css" rel="stylesheet" />
+    <script src="wallet.js"></script>
+    <title>p3 Wallet</title>
+  </head>
+  <body>
+    <header id="header"></header>
+
+    
+    <main>
+      <div class="px-6 lg:w-3/5 m-auto">
+        <div class="w-fit">
+          <a href="cryptoDeposit.html" class="flex items-center my-4">
+            <svg
+              class="w-4 h-4 mr-2 text-gray-500"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 14 10"
+            >
+              <path
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1.4"
+                d="M13 5H1m0 0 4 4M1 5l4-4"
+              />
+            </svg>
+            <p class="text-gray-500 text-base font-medium">Back</p>
+          </a>
+        </div>
+
+        <div>
+            <p>Deposit Asset</p>
+          <div class="justify-between items-center border-b py-4 md:flex ">
+            <div>
+              <div class="flex items-center mb-2">
+                <div id="assetImg"></div>
+                <h2
+                  class="text-xl font-semibold mx-1 md:font-bold md:text-2xl"
+                  id="assetName"
+                ></h2>
+                <select
+                  name=""
+                  id="currency"
+                  class="border-0 focus:ring-0 focus:border-primary"
+                >
+                  <option value="USA"></option>
+                  <option value=""></option>
+                  <option value=""></option>
+                </select>
+              </div>
+              <div class="flex">
+                <p
+                  class="text-gray-500 mr-1 md:text-2xl font-['Satoshi']"
+                  id="assetBalance"
+                ></p>
+                <p
+                  class="flex items-center bg-[#FEF3F2] text-[#DF1111] text-xs font-medium w-fit px-2 rounded-2xl"
+                  id="assetPercent"
+                >
+                  <svg
+                    class="w-3 h-3 text-[#DF1111] mr-1 dark:text-white"
+                    aria-hidden="true"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 10 14"
+                  >
+                    <path
+                      stroke="currentColor"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="1.8"
+                      d="M5 1v12m0 0 4-4m-4 4L1 9"
+                    />
+                  </svg>
+                </p>
+              </div>
+            </div>
+
+            <div>
+              <button
+                class="w-full bg-gray-900 rounded-3xl text-white text-sm font-medium font-['Satoshi'] leading-none mt-6 px-6 py-3"
+              >
+                Buy
+              </button>
+            </div>
+          </div>
+
+          <div class="days flex justify-end my-4">
+            <ul
+              class="w-full px-6 py-2 bg-slate-100 text-gray-500 font-['Satoshi'] rounded-3xl items-center gap-8 inline-flex"
+            >
+              <button>1D</button>
+              <button>1W</button>
+              <button>1M</button>
+              <button>1Y</button>
+              <button>All</button>
+            </ul>
+          </div>
+
+          <div class="my-4"></div>
+
+          <div class="flex-col items-center gap-6 inline-flex mb-10">
+            <p class="text-black font-['Satoshi']">
+              All your Bitcoin transactions will show up here
+            </p>
+            <div class="w-14 h-14">
+              <img src="/src/images/file.png" alt="file" />
+            </div>
+            <button
+              class="px-6 py-3 rounded-[29px] border border-black text-black font-medium font-['Satoshi'] leading-none"
+            >
+              Buy bitcoin
+            </button>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

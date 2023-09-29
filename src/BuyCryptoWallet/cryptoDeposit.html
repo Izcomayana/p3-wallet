@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="/dist/output.css" rel="stylesheet" />
+  <script src="wallet.js"></script>
+  <title>p3 Wallet</title>
+</head>
+<body>
+  <header id="header"></header>
+
+  <main>
+    <div class="px-6 lg:w-3/5 m-auto">
+      <div class="w-fit">
+        <a href="cryptoWallet.html" class="flex items-center mt-4 md:mb-4">
+          <svg
+            class="w-4 h-4 mr-2 text-gray-500"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 14 10"
+          >
+            <path
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="1.4"
+              d="M13 5H1m0 0 4 4M1 5l4-4"
+            />
+          </svg>
+          <p class="text-gray-500 text-base font-medium">Back</p>
+        </a>
+      </div>
+
+      <div class="mt-8 pb-4 border-b md:mt-10">
+        <h2 class="text-2xl font-semibold">Deposit Crypto</h2>
+      </div>
+      <p class="mt-4">Select crypto you want to deposit.</p>
+
+      <div class="relative overflow-x-auto my-10">
+        <table class="w-full text-left">
+          <thead
+            class="hidden md:table-header-group text-gray-500 text-xs border-b"
+          >
+            <tr>
+              <th scope="col" class="pl-6 py-3">Assets</th>
+              <th scope="col" class="text-right pr-6 py-3">Price</th>
+            </tr>
+          </thead>
+          <tbody class="text-sm divide-y" id="cryptoTable"></tbody>
+        </table>
+
+        <table class="w-full text-left hidden">
+          <thead
+            class="hidden md:table-header-group text-gray-500 text-xs border-b"
+          >
+            <tr>
+              <th scope="col" class="p-4">Portfolio</th>
+              <th scope="col" class="p-4">Price</th>
+              <th scope="col" class="p-4">Account Balance</th>
+            </tr>
+          </thead>
+          <tbody class="text-sm divide-y" id="portfolioTable"></tbody>
+        </table>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

@@ -11,8 +11,8 @@
   opacity: 0;
 }
 
-header a:hover svg {
-  fill: white !important;
+/* a:hover svg {
+  fill: white;
 }
 
 a:focus svg {
@@ -21,7 +21,7 @@ a:focus svg {
 
 a:active svg {
   fill: white;
-}
+} */
 
 .container#blur.active {
   filter: blur(2px);
@@ -58,6 +58,11 @@ select#currency option[value="USA"] {
 }
 
 #P2PDropdown.show {
+  display: block;
+  transition: 200ms ease-in-out;
+}
+
+#portP2PDropdown.show {
   display: block;
   transition: 200ms ease-in-out;
 }
@@ -104,6 +109,9 @@ select#currency option[value="USA"] {
 
 tr {
   border-bottom: 1px solid #E4E7EC !important;
+}
+
+th {
   cursor: pointer;
 }
 
@@ -115,6 +123,18 @@ tr {
 .days ul> button:focus {
   font-weight: 700;
   color: black;
+}
+
+#allBtn.active {
+  font-weight: 700;
+}
+
+#recievedBtn.active {
+  font-weight: 700;
+}
+
+#sentBtn.active {
+  font-weight: 700;
 }
 
 #modal {
